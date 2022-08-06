@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from "axios";
+import Link from 'next/dist/client/link';
 // export const getStaticProps = async () => {
 //   const res = await fetch(
 //     "https://api.tjori.com/api/v7filters/na/women-all-products/?f_page=6&format=json"
@@ -35,8 +36,10 @@ function Gifting({data}) {
         return (
           <div key={currEle.id} className='grid-item'>
             <div className="card">
+              <Link href="#">
               <img src={currEle.plpimaage} alt="product" />
-              <h1>{currEle.name}</h1>
+              </Link>
+              <h4>{currEle.name}</h4>
               <p class="price"> price:{currEle.price}</p>
 
               <p>

@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from "axios"
+import Link from 'next/dist/client/link';
 export async function getStaticProps() {
   try {
     const result = await axios.get('https://api.tjori.com/api/v7filters/na/women-all-products/?f_page=1&format=json');
@@ -36,7 +37,9 @@ function jewelory( {data}) {
         return(
           <div key={currEle.id} className='grid-item'>
              <div className="card">
+              <Link href="#">
             <img src={currEle.plpimaage} />
+            </Link>
           <p>{currEle.name}</p>
           <h5> price:{currEle.price}</h5>
           
