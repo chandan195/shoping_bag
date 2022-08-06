@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Link from "next/dist/client/link";
 // export const getStaticProps = async () => {
 //   const res = await fetch(
 //     "https://api.tjori.com/api/v7filters/na/women-all-products/?f_page=26&format=json"
@@ -37,7 +38,9 @@ function Travel({ data }) {
           return (
             <div key={currEle.id} className="grid-item">
               <div className="card">
+                <Link href="#">
                 <img src={currEle.plpimaage} />
+                </Link>
                 <p>{currEle.name}</p>
                 <h5>price:{currEle.price}</h5>
                 <p>

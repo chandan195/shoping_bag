@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Link from "next/link";
 // export const getStaticProps = async () => {
 //   const res = await fetch(
 //     "https://api.tjori.com/api/v7filters/na/women-all-products/?f_page=5&format=json"
@@ -37,9 +38,12 @@ function Access({data}) {
           <div  className='grid-item' key={currEle.id} >
             
             <div className="card">
+              {/* <Link ></Link> */}
+              <Link href="#">
               <img src={currEle.plpimaage} alt="product" />
-              <h1>{currEle.name}</h1>
-              <p class="price">{currEle.price}</p>
+              </Link>
+              <h4>{currEle.name}</h4>
+              <p class="price">Price :{currEle.price}</p>
 
               <p>
                 <button>Add to Cart</button>

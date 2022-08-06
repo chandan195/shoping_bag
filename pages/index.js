@@ -2,25 +2,27 @@ import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 import axios from "axios";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
-export async function getStaticProps() {
-  try {
-    const result = await axios.get(
-      "https://api.tjori.com/api/v7filters/na/women-all-products/?f_page=290&format=json"
-    );
-    const data = result.data;
-    return {
-      props: {
-        data: data,
-      },
-    };
-  } catch (error) {
-    console.log(error);
-  }
-}
+// export async function getStaticProps() {
+//   try {
+//     const result = await axios.get(
+//       "https://api.tjori.com/api/v7filters/na/women-all-products/?f_page=290&format=json"
+//     );
+//     const data = result.data;
+//     return {
+//       props: {
+//         data: data,
+//       },
+//     };
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
-export default function Home({ data }) {
+// export default function Home({ data }) {
+export default function Home() {
   // console.log(data);
   return (
     <div className={styles.container}>
@@ -38,7 +40,83 @@ export default function Home({ data }) {
       <div className="container-fluid">
         {/* <h4>Access</h4> */}
         <div className="col-md-3  grid-container ">
-          {data.data.products.map((currEle) => {
+        <div className="grid-item">
+            <div className={styles.card2}>
+              <div className={styles.img}>
+                <Link href="./jewelory">
+                <Image
+                  src="/jewelery.avif"
+                  alt="product"
+                  width={380}
+                  height={400}
+                />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid-item">
+            <div className={styles.card2}>
+              <div className={styles.img}>
+                <Link href="./Bags">
+                <Image
+                  src="/bags.webp"
+                  alt="product"
+                  width={380}
+                  height={400}
+                />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid-item">
+            <div className={styles.card2}>
+              <div className={styles.img}>
+              <Link href="./Travel">
+                <Image
+                  src="/tj-cm-55-07-small-image2020-07-02-12_38_36.090568.avif"
+                  alt="product"
+                  width={380}
+                  height={400}
+                />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid-item">
+            <div className={styles.card2}>
+              <div className={styles.img}>
+                <Link href="./Access">
+                  <Image
+                    src="/foodwear.webp"
+                    alt="product"
+                    width={380}
+                    height={400}
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid-item">
+            <div className={styles.card2}>
+              <div className={styles.img}>
+                <Link href="./Gifting">
+                <Image
+                  src="/tj-cm-55-07-small-image2020-07-02-12_38_36.090568.avif"
+                  alt="product"
+                  width={380}
+                  height={400}
+                />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+        
+          {/* {data.data.products.map((currEle) => {
             return (
               <div className="grid-item" key={currEle.id}>
                 <div className={styles.card2}>
@@ -48,11 +126,9 @@ export default function Home({ data }) {
                 </div>
               </div>
             );
-          })}
+          })} */}
         </div>
       </div>
-      
-     
     </div>
-  )
-};
+  );
+}

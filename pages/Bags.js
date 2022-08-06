@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 // import Image from "next/image";
 // export const getStaticProps = async () => {
@@ -43,9 +44,12 @@ const Bags = ({ data }) => {
             <div key={currEle.id} className="grid-item">
               {/* <div className="card"> */}
               <div className={styles.card2}>
+                <Link href="#">
                 <img src={currEle.plpimaage} alt="product" />
+                </Link>
+                
                 <h5>{currEle.name}</h5>
-                <h2> price:{currEle.price}</h2>
+                {/* <h2> price:{currEle.price}</h2> */}
 
                 {/* <p> */}
                 <button className={styles.button1}>BUY NOW</button>
